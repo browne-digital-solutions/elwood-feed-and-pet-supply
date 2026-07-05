@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elwood Feed Pet Supplies | Feed Store & Pet Supplies in East Northport, NY</title>
+
+  <meta name="description" content="Elwood Feed Pet Supplies in East Northport, NY offers pet food, livestock feed, farm supplies, lawn and garden products, and free local delivery." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f5ef;
+      color: #1f2a1f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .top-bar {
+      background: #263b24;
+      color: white;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.92rem;
+    }
+
+    .top-bar a {
+      color: #f3d36b;
+      font-weight: 700;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-inner {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #263b24;
+    }
+
+    .logo span {
+      color: #b9822b;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 700;
+      color: #263b24;
+    }
+
+    .nav-links a:hover {
+      color: #b9822b;
+    }
+
+    .nav-cta {
+      background: #b9822b;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(185,130,43,0.25);
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(30,50,28,0.92), rgba(30,50,28,0.45)),
+        url("https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #f3d36b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.18rem;
+      color: #f3f4f0;
+      margin-bottom: 32px;
+      max-width: 680px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #f3d36b;
+      color: #263b24;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #263b24;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .quick-contact {
+      background: white;
+      padding: 35px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: #f7f5ef;
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px solid #e6dfcf;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.09);
+    }
+
+    .contact-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-card h3 {
+      color: #263b24;
+      margin-bottom: 5px;
+    }
+
+    .contact-card p {
+      color: #5f6f58;
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: #b9822b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #263b24;
+      margin-top: 10px;
+      line-height: 1.1;
+    }
+
+    .section-title p {
+      color: #5f6f58;
+      margin-top: 14px;
+      font-size: 1.05rem;
+    }
+
+    .categories {
+      background: #f7f5ef;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      border: 1px solid #e6dfcf;
+    }
+
+    .category-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 50px rgba(0,0,0,0.12);
+    }
+
+    .category-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .category-content {
+      padding: 26px;
+    }
+
+    .category-content h3 {
+      color: #263b24;
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    .category-content p {
+      color: #5f6f58;
+      margin-bottom: 18px;
+    }
+
+    .small-link {
+      color: #b9822b;
+      font-weight: 900;
+    }
+
+    .why {
+      background: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .why-card {
+      background: #f7f5ef;
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid #e6dfcf;
+      text-align: center;
+    }
+
+    .why-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .why-card h3 {
+      color: #263b24;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: #5f6f58;
+    }
+
+    .delivery {
+      background: #263b24;
+      color: white;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .split h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .split p {
+      color: #e7eadf;
+      margin-bottom: 18px;
+    }
+
+    .delivery-img {
+      min-height: 450px;
+      border-radius: 28px;
+      background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url("https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+    }
+
+    .reviews {
+      background: #f7f5ef;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid #e6dfcf;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    }
+
+    .stars {
+      color: #b9822b;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .review-card p {
+      color: #5f6f58;
+      margin-bottom: 16px;
+    }
+
+    .review-card strong {
+      color: #263b24;
+    }
+
+    .store-info {
+      background: white;
+    }
+
+    .info-box {
+      background: #f7f5ef;
+      padding: 40px;
+      border-radius: 26px;
+      border: 1px solid #e6dfcf;
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.06);
+    }
+
+    .info-box h2 {
+      color: #263b24;
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+
+    .info-box p {
+      color: #5f6f58;
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .info-buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .map-section {
+      padding: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 430px;
+      border: 0;
+      display: block;
+    }
+
+    .cta {
+      background:
+        linear-gradient(90deg, rgba(38,59,36,0.94), rgba(38,59,36,0.72)),
+        url("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: #f3f4f0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #172516;
+      color: #dfe7d8;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 35px;
+      margin-bottom: 35px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    footer p,
+    footer a {
+      color: #dfe7d8;
+      margin-bottom: 8px;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
+      color: #f3d36b;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 20px;
+      color: #aebca8;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 950px) {
+      .nav-links {
+        display: none;
+      }
+
+      .contact-grid,
+      .category-grid,
+      .why-grid,
+      .review-grid,
+      .footer-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      .delivery-img {
+        min-height: 330px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div>📍 2036 Jericho Turnpike, East Northport, NY 11731</div>
+    <div>
+      📞 <a href="tel:6314862181">(631) 486-2181</a>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Elwood Feed <span>Pet Supplies</span></a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:6314862181" class="nav-cta">Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Feed Store & Pet Supplies in East Northport, NY</div>
+      <h1>Long Island's Trusted Feed & Pet Supply Store</h1>
+      <p>
+        Premium pet food, livestock feed, farm supplies, lawn and garden products,
+        and free local delivery for customers across Elwood, East Northport,
+        Huntington, Commack, and nearby Long Island communities.
+      </p>
+
+      <div class="btn-group">
+        <a href="tel:6314862181" class="btn btn-primary">Call Now</a>
+        <a href="#products" class="btn btn-secondary">View Products</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="quick-contact">
+    <div class="container contact-grid">
+
+      <a href="tel:6314862181" class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Call The Store</h3>
+        <p>(631) 486-2181</p>
+      </a>
+
+      <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank" class="contact-card">
+        <div class="icon">📍</div>
+        <h3>Get Directions</h3>
+        <p>2036 Jericho Turnpike</p>
+      </a>
+
+      <a href="https://www.facebook.com/p/Elwood-Feed-Pet-Supplies-61580834076799/" target="_blank" class="contact-card">
+        <div class="icon">👍</div>
+        <h3>Facebook</h3>
+        <p>Follow store updates</p>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" class="contact-card">
+        <div class="icon">📸</div>
+        <h3>Instagram</h3>
+        <p>View photos and updates</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="categories" id="products">
+    <div class="container">
+      <div class="section-title">
+        <span>Products</span>
+        <h2>Everything For Pets, Feed, Farm & Garden</h2>
+        <p>
+          A wide selection of trusted products for dogs, cats, birds, small animals,
+          livestock, farms, stables, lawns, and gardens.
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1601758064224-c3caca2fdbf4?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Dog Supplies</h3>
+            <p>Dog food, treats, toys, collars, leashes, supplements, grooming products, and everyday essentials.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Cat Supplies</h3>
+            <p>Cat food, litter, treats, toys, health products, and supplies for happy, healthy cats.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Bird Supplies</h3>
+            <p>Bird seed, feed, feeders, cages, accessories, and supplies for backyard and companion birds.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Small Animal Supplies</h3>
+            <p>Rabbit feed, guinea pig food, hamster supplies, bedding, treats, and habitat essentials.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Livestock Feed</h3>
+            <p>Feed options for chickens, horses, goats, sheep, cattle, and specialty livestock needs.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Farm Supplies</h3>
+            <p>Hay, straw, shavings, bedding, buckets, stable products, and everyday farm essentials.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="category-content">
+            <h3>Lawn & Garden</h3>
+            <p>Grass seed, fertilizer, soil, mulch, garden products, and seasonal outdoor supplies.</p>
+            <a href="products.html" class="small-link">Learn More →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <div class="section-title">
+        <span>Why Shop With Us</span>
+        <h2>Local Service With The Products You Need</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon">🚚</div>
+          <h3>Free Local Delivery</h3>
+          <p>Convenient delivery options for nearby customers and regular supply needs.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">🤝</div>
+          <h3>Knowledgeable Staff</h3>
+          <p>Friendly help finding the right products for pets, livestock, farms, and gardens.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">🏷️</div>
+          <h3>Competitive Pricing</h3>
+          <p>Great value on everyday pet food, feed, supplies, and seasonal products.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">🛒</div>
+          <h3>Large Selection</h3>
+          <p>Products for dogs, cats, birds, small animals, livestock, lawn, garden, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="delivery">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Convenient Local Service</div>
+        <h2>Free Local Delivery For Pet Food, Feed & Supplies</h2>
+        <p>
+          Elwood Feed Pet Supplies makes it easier to keep your home, farm, stable,
+          and pets stocked with the products you need.
+        </p>
+        <p>
+          Call the store to ask about product availability, local delivery, and
+          ordering options.
+        </p>
+
+        <div class="btn-group">
+          <a href="tel:6314862181" class="btn btn-primary">Call To Order</a>
+          <a href="delivery.html" class="btn btn-secondary">Delivery Info</a>
+        </div>
+      </div>
+
+      <div class="delivery-img"></div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <div class="section-title">
+        <span>Customer Reviews</span>
+        <h2>Trusted By Local Pet Owners & Families</h2>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Great local shop with friendly service and a strong selection of pet food and supplies.”
+          </p>
+          <strong>Sarah M.</strong>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Very convenient location and helpful staff. Love having a feed and pet supply store nearby.”
+          </p>
+          <strong>Anthony R.</strong>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “They make it easy to get the products we need without dealing with the big-box stores.”
+          </p>
+          <strong>Lauren T.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="store-info">
+    <div class="container">
+      <div class="info-box">
+        <h2>Visit Elwood Feed Pet Supplies</h2>
+        <p><strong>Address:</strong> 2036 Jericho Turnpike, East Northport, NY 11731</p>
+        <p><strong>Phone:</strong> (631) 486-2181</p>
+        <p><strong>Serving:</strong> East Northport, Elwood, Huntington, Commack, and surrounding Long Island communities.</p>
+
+        <div class="info-buttons">
+          <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank" class="btn btn-primary">Get Directions</a>
+          <a href="tel:6314862181" class="btn btn-secondary">Call Store</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps?q=2036%20Jericho%20Turnpike%20East%20Northport%20NY%2011731&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Visit Elwood Feed Pet Supplies Today</h2>
+      <p>
+        Quality products, friendly service, and local expertise for all your pet,
+        feed, farm, lawn, and garden needs.
+      </p>
+
+      <div class="btn-group" style="justify-content:center;">
+        <a href="tel:6314862181" class="btn btn-primary">Call Now</a>
+        <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank" class="btn btn-secondary">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div>
+        <h3>Elwood Feed Pet Supplies</h3>
+        <p>
+          Local feed store and pet supply retailer serving East Northport,
+          Elwood, Huntington, Commack, and surrounding Long Island communities.
+        </p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:6314862181">(631) 486-2181</a>
+        <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank">
+          2036 Jericho Turnpike<br>
+          East Northport, NY 11731
+        </a>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h4>Social</h4>
+        <a href="https://www.facebook.com/p/Elwood-Feed-Pet-Supplies-61580834076799/" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      © 2026 Elwood Feed Pet Supplies. All rights reserved. Website demo created by Browne Digital Solutions.
+    </div>
+  </footer>
+
+</body>
+</html>
