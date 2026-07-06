@@ -661,3 +661,44 @@
     padding: 100px 0;
   }
 }
+
+/* MOBILE NAV FIX */
+@media (max-width: 950px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .nav-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 0.95rem;
+    padding: 6px 4px;
+    pointer-events: auto;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+}
