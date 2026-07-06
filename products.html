@@ -1,5 +1,3 @@
-<!-- Save as products.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +6,6 @@
 
   <title>Products | Elwood Feed Pet Supplies</title>
 
-  <meta name="description" content="Shop dog supplies, cat supplies, bird seed, small animal products, livestock feed, farm supplies, lawn and garden products at Elwood Feed Pet Supplies in East Northport, NY." />
-
   <style>
     * {
       margin: 0;
@@ -17,14 +13,10 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f5ef;
-      color: #1f2a1f;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #263b24;
+      background: #faf7ef;
       line-height: 1.6;
     }
 
@@ -36,87 +28,58 @@
     .container {
       width: 90%;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
     }
 
-    section {
-      padding: 80px 0;
-    }
-
-    .top-bar {
+    .navbar {
       background: #263b24;
-      color: white;
-      padding: 10px 5%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.92rem;
-    }
-
-    .top-bar a {
-      color: #f3d36b;
-      font-weight: 700;
-    }
-
-    nav {
+      padding: 18px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
-    .nav-inner {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 0;
+    .nav-container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
+      color: white;
       font-size: 1.45rem;
       font-weight: 900;
-      color: #263b24;
-    }
-
-    .logo span {
-      color: #b9822b;
+      letter-spacing: 0.5px;
     }
 
     .nav-links {
       display: flex;
+      gap: 26px;
       align-items: center;
-      gap: 24px;
+    }
+
+    .nav-links a {
+      color: white;
       font-weight: 700;
-      color: #263b24;
+      font-size: 0.95rem;
+      opacity: 0.92;
     }
 
-    .nav-links a:hover {
-      color: #b9822b;
-    }
-
-    .nav-cta {
-      background: #b9822b;
-      color: white !important;
-      padding: 11px 18px;
-      border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(185,130,43,0.25);
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #d9a441;
     }
 
     .hero {
-      min-height: 82vh;
-      padding: 120px 0;
+      min-height: 68vh;
+      padding: 125px 0;
       display: flex;
       align-items: center;
       color: white;
       background:
-        linear-gradient(90deg, rgba(30,50,28,0.92), rgba(30,50,28,0.45)),
-        url("https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+        linear-gradient(90deg, rgba(30,50,28,0.94), rgba(30,50,28,0.55)),
+        url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
     }
 
     .hero-content {
@@ -124,393 +87,271 @@
     }
 
     .eyebrow {
-      color: #f3d36b;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      display: inline-block;
+      color: #d9a441;
       font-weight: 900;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: 1;
-      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.08;
+      margin-bottom: 22px;
     }
 
     .hero p {
-      font-size: 1.18rem;
-      color: #f3f4f0;
-      margin-bottom: 32px;
+      font-size: 1.15rem;
       max-width: 680px;
+      margin-bottom: 30px;
+      color: #f2efe6;
     }
 
     .btn-group {
       display: flex;
+      gap: 15px;
       flex-wrap: wrap;
-      gap: 14px;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 24px;
+      background: #b9822b;
+      color: white;
+      padding: 14px 24px;
       border-radius: 999px;
       font-weight: 900;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background: #f3d36b;
-      color: #263b24;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: #263b24;
+      border: 2px solid #b9822b;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
+      background: #a36f20;
+      border-color: #a36f20;
     }
 
-    .quick-contact {
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
       background: white;
-      padding: 35px 0;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .contact-card {
-      background: #f7f5ef;
-      padding: 24px;
-      border-radius: 18px;
-      border: 1px solid #e6dfcf;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.09);
-    }
-
-    .contact-card .icon {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .contact-card h3 {
       color: #263b24;
-      margin-bottom: 5px;
+      border-color: white;
     }
 
-    .contact-card p {
-      color: #5f6f58;
-      font-size: 0.95rem;
+    .section {
+      padding: 80px 0;
     }
 
     .section-title {
-      max-width: 780px;
-      margin: 0 auto 55px;
       text-align: center;
+      max-width: 780px;
+      margin: 0 auto 45px;
     }
 
     .section-title span {
       color: #b9822b;
-      text-transform: uppercase;
-      letter-spacing: 2px;
       font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
       font-size: 0.85rem;
     }
 
     .section-title h2 {
       font-size: clamp(2rem, 4vw, 3.2rem);
+      margin: 10px 0 15px;
       color: #263b24;
-      margin-top: 10px;
-      line-height: 1.1;
     }
 
     .section-title p {
-      color: #5f6f58;
-      margin-top: 14px;
+      color: #5a5a5a;
       font-size: 1.05rem;
     }
 
-    .categories {
-      background: #f7f5ef;
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
     }
 
-    .category-grid {
+    .filter-btn {
+      padding: 13px 24px;
+      border-radius: 999px;
+      border: 2px solid #b9822b;
+      background: white;
+      color: #263b24;
+      font-weight: 900;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #b9822b;
+      color: white;
+    }
+
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 26px;
     }
 
-    .category-card {
+    .product-card {
       background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-      border: 1px solid #e6dfcf;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      border: 1px solid #eee3cf;
+      transition: 0.2s ease;
     }
 
-    .category-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 22px 50px rgba(0,0,0,0.12);
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
     }
 
-    .category-img {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .category-content {
-      padding: 26px;
-    }
-
-    .category-content h3 {
-      color: #263b24;
-      margin-bottom: 10px;
-      font-size: 1.35rem;
-    }
-
-    .category-content p {
-      color: #5f6f58;
+    .product-card .animal-tag {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #f3ead7;
+      color: #8a5a17;
+      font-weight: 900;
+      font-size: 0.8rem;
       margin-bottom: 18px;
     }
 
-    .small-link {
-      color: #b9822b;
-      font-weight: 900;
-    }
-
-    .why {
-      background: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .why-card {
-      background: #f7f5ef;
-      padding: 30px;
-      border-radius: 22px;
-      border: 1px solid #e6dfcf;
-      text-align: center;
-    }
-
-    .why-card .icon {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-    }
-
-    .why-card h3 {
-      color: #263b24;
+    .product-card h3 {
+      font-size: 1.35rem;
       margin-bottom: 10px;
+      color: #263b24;
     }
 
-    .why-card p {
-      color: #5f6f58;
+    .product-card p {
+      color: #5b5b5b;
+      margin-bottom: 18px;
     }
 
-    .delivery {
+    .product-type {
+      font-weight: 900;
+      color: #b9822b;
+      font-size: 0.95rem;
+    }
+
+    .alt-section {
       background: #263b24;
       color: white;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
+    .alt-section .section-title h2,
+    .alt-section .section-title p {
+      color: white;
     }
 
-    .split h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
+    .info-strip {
+      background: #f3ead7;
+      padding: 38px 0;
     }
 
-    .split p {
-      color: #e7eadf;
-      margin-bottom: 18px;
-    }
-
-    .delivery-img {
-      min-height: 450px;
-      border-radius: 28px;
-      background:
-        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-        url("https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
-    }
-
-    .reviews {
-      background: #f7f5ef;
-    }
-
-    .review-grid {
+    .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-    }
-
-    .review-card {
-      background: white;
-      padding: 30px;
-      border-radius: 22px;
-      border: 1px solid #e6dfcf;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    }
-
-    .stars {
-      color: #b9822b;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-
-    .review-card p {
-      color: #5f6f58;
-      margin-bottom: 16px;
-    }
-
-    .review-card strong {
-      color: #263b24;
-    }
-
-    .store-info {
-      background: white;
+      text-align: center;
     }
 
     .info-box {
-      background: #f7f5ef;
-      padding: 40px;
-      border-radius: 26px;
-      border: 1px solid #e6dfcf;
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.06);
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
 
-    .info-box h2 {
-      color: #263b24;
-      font-size: 2.4rem;
-      margin-bottom: 15px;
-    }
-
-    .info-box p {
-      color: #5f6f58;
+    .info-box h3 {
       margin-bottom: 8px;
-      font-size: 1.08rem;
-    }
-
-    .info-buttons {
-      margin-top: 24px;
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .map-section {
-      padding: 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 430px;
-      border: 0;
-      display: block;
-    }
-
-    .cta {
-      background:
-        linear-gradient(90deg, rgba(38,59,36,0.94), rgba(38,59,36,0.72)),
-        url("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      margin-bottom: 16px;
-    }
-
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 30px;
-      color: #f3f4f0;
-      font-size: 1.1rem;
+      color: #263b24;
     }
 
     footer {
-      background: #172516;
-      color: #dfe7d8;
-      padding: 60px 0 30px;
+      background: #172315;
+      color: white;
+      padding: 55px 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 35px;
-      margin-bottom: 35px;
     }
 
     footer h3,
     footer h4 {
+      margin-bottom: 14px;
       color: white;
-      margin-bottom: 16px;
     }
 
     footer p,
     footer a {
-      color: #dfe7d8;
-      margin-bottom: 8px;
+      color: #d7d7d7;
       display: block;
+      margin-bottom: 8px;
       font-size: 0.95rem;
     }
 
     footer a:hover {
-      color: #f3d36b;
+      color: #d9a441;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 20px;
-      color: #aebca8;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 950px) {
-      .nav-links {
-        display: none;
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 14px;
       }
 
-      .contact-grid,
-      .category-grid,
-      .why-grid,
-      .review-grid,
-      .footer-grid,
-      .split {
-        grid-template-columns: 1fr;
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .product-grid,
+      .info-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: auto;
+        padding: 100px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-grid,
+      .info-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .delivery-img {
-        min-height: 330px;
+      .hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .filter-btn {
+        width: 100%;
       }
     }
   </style>
@@ -518,197 +359,170 @@
 
 <body>
 
-  <div class="top-bar">
-    <div>📍 2036 Jericho Turnpike, East Northport, NY 11731</div>
-    <div>📞 <a href="tel:6314862181">(631) 486-2181</a></div>
-  </div>
-
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="logo">Elwood Feed <span>Pet Supplies</span></a>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Elwood Feed Pet Supplies</a>
 
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
+        <a href="products.html" class="active">Products</a>
         <a href="delivery.html">Delivery</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="tel:6314862181" class="nav-cta">Call Now</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero" style="
-    min-height: 55vh;
-    background:
-      linear-gradient(90deg, rgba(30,50,28,0.92), rgba(30,50,28,0.5)),
-      url('https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-  ">
-    <div class="container hero-content">
-      <div class="eyebrow">Products</div>
-      <h1>Pet Food, Feed, Farm Supplies & More</h1>
-      <p>
-        From everyday pet essentials to livestock feed, stable supplies, and lawn and garden products,
-        Elwood Feed Pet Supplies carries the products local families, pet owners, and farms rely on.
-      </p>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Pet Food • Feed • Toys • Supplies</span>
+        <h1>Shop Products by Animal</h1>
+        <p>Browse food, toys, treats, and supplies for dogs, cats, horses, and more. Use the filters below to quickly find what you need.</p>
 
-      <div class="btn-group">
-        <a href="tel:6314862181" class="btn btn-primary">Call For Availability</a>
-        <a href="delivery.html" class="btn btn-secondary">Ask About Delivery</a>
+        <div class="btn-group">
+          <a href="#products" class="btn">Browse Products</a>
+          <a href="contact.html" class="btn btn-outline">Ask About Inventory</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="categories">
+  <section class="info-strip">
     <div class="container">
-
-      <div class="section-title">
-        <span>Shop By Category</span>
-        <h2>Products For Every Pet, Property & Purpose</h2>
-        <p>
-          Whether you need premium dog food, cat litter, bird seed, livestock feed, hay,
-          straw, or garden supplies, our store is built around convenience, quality, and local service.
-        </p>
-      </div>
-
-      <div class="category-grid">
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1601758064224-c3caca2fdbf4?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Dog Supplies</h3>
-            <p>Food, treats, toys, supplements, grooming items, collars, leashes, bowls, and everyday dog essentials.</p>
-            <a href="tel:6314862181" class="small-link">Call About Dog Products →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Cat Supplies</h3>
-            <p>Cat food, litter, treats, toys, health products, and supplies to keep your cat comfortable and cared for.</p>
-            <a href="tel:6314862181" class="small-link">Call About Cat Products →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Bird Supplies</h3>
-            <p>Bird seed, feed, feeders, cages, accessories, and products for backyard birds and companion birds.</p>
-            <a href="tel:6314862181" class="small-link">Call About Bird Supplies →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Small Animal Supplies</h3>
-            <p>Rabbit feed, guinea pig food, hamster products, bedding, treats, cages, and small animal care items.</p>
-            <a href="tel:6314862181" class="small-link">Call About Small Animal Supplies →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Livestock Feed</h3>
-            <p>Feed and supplies for chickens, horses, goats, sheep, cattle, and other livestock needs.</p>
-            <a href="tel:6314862181" class="small-link">Call About Livestock Feed →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Farm & Stable Supplies</h3>
-            <p>Hay, straw, shavings, bedding, buckets, farm tools, stable products, and everyday farm essentials.</p>
-            <a href="tel:6314862181" class="small-link">Call About Farm Supplies →</a>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-img" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="category-content">
-            <h3>Lawn & Garden</h3>
-            <p>Grass seed, fertilizer, soil, mulch, seasonal garden products, and outdoor property supplies.</p>
-            <a href="tel:6314862181" class="small-link">Call About Lawn & Garden →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="why">
-    <div class="container">
-      <div class="section-title">
-        <span>Popular Product Types</span>
-        <h2>Common Items Customers Ask For</h2>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="icon">🐶</div>
+      <div class="info-grid">
+        <div class="info-box">
           <h3>Pet Food</h3>
-          <p>Dry food, wet food, treats, and daily essentials for dogs, cats, birds, and small animals.</p>
+          <p>Food options for dogs, cats, horses, and other animals.</p>
         </div>
 
-        <div class="why-card">
-          <div class="icon">🐴</div>
-          <h3>Feed & Hay</h3>
-          <p>Feed, hay, straw, bedding, and related supplies for livestock, farms, and stables.</p>
+        <div class="info-box">
+          <h3>Toys & Treats</h3>
+          <p>Everyday toys, treats, and enrichment products.</p>
         </div>
 
-        <div class="why-card">
-          <div class="icon">🌱</div>
-          <h3>Garden Products</h3>
-          <p>Seasonal lawn and garden supplies for local homeowners and property owners.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="icon">🚚</div>
-          <h3>Delivery Items</h3>
-          <p>Ask about free local delivery for larger or repeat orders in nearby communities.</p>
+        <div class="info-box">
+          <h3>Local Help</h3>
+          <p>Call or stop in to ask about current inventory.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="delivery">
-    <div class="container split">
-      <div>
-        <div class="eyebrow">Need Something Specific?</div>
-        <h2>Call Ahead For Product Availability</h2>
-        <p>
-          Product inventory can vary, so calling ahead is the easiest way to ask about specific brands,
-          sizes, feed types, or delivery options.
-        </p>
-        <p>
-          The team can help point you toward the right products for your pets, farm, stable, lawn, or garden.
-        </p>
-
-        <div class="btn-group">
-          <a href="tel:6314862181" class="btn btn-primary">Call The Store</a>
-          <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank" class="btn btn-secondary">Get Directions</a>
-        </div>
-      </div>
-
-      <div class="delivery-img"></div>
-    </div>
-  </section>
-
-  <section class="cta">
+  <section class="section" id="products">
     <div class="container">
-      <h2>Find The Right Supplies Today</h2>
-      <p>
-        Stop by Elwood Feed Pet Supplies or call the store to ask about product availability,
-        pricing, and free local delivery.
-      </p>
 
-      <div class="btn-group" style="justify-content:center;">
-        <a href="tel:6314862181" class="btn btn-primary">Call Now</a>
-        <a href="delivery.html" class="btn btn-secondary">Delivery Info</a>
+      <div class="section-title">
+        <span>Product Finder</span>
+        <h2>Filter by Animal</h2>
+        <p>Select an animal below to view related food, toys, and supplies.</p>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('dog', this)">Dogs</button>
+        <button class="filter-btn" onclick="filterProducts('cat', this)">Cats</button>
+        <button class="filter-btn" onclick="filterProducts('horse', this)">Horses</button>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card dog">
+          <span class="animal-tag">Dog</span>
+          <h3>Dog Food #1</h3>
+          <p>Placeholder for a dog food product. Replace this with the real brand or product name later.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card dog">
+          <span class="animal-tag">Dog</span>
+          <h3>Dog Food #2</h3>
+          <p>Placeholder for another dog food product. Add size, flavor, or brand details when known.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card dog">
+          <span class="animal-tag">Dog</span>
+          <h3>Dog Toy #1</h3>
+          <p>Placeholder for a dog toy product. Use this for toys, chews, balls, ropes, or enrichment items.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+        <div class="product-card dog">
+          <span class="animal-tag">Dog</span>
+          <h3>Dog Toy #2</h3>
+          <p>Placeholder for another dog toy product. Replace this after confirming inventory.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+        <div class="product-card cat">
+          <span class="animal-tag">Cat</span>
+          <h3>Cat Food #1</h3>
+          <p>Placeholder for a cat food product. Replace this with the real product name later.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card cat">
+          <span class="animal-tag">Cat</span>
+          <h3>Cat Food #2</h3>
+          <p>Placeholder for another cat food option. Add brand, size, or flavor when known.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card cat">
+          <span class="animal-tag">Cat</span>
+          <h3>Cat Toy #1</h3>
+          <p>Placeholder for a cat toy product. Use this for interactive toys, wands, or scratchers.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+        <div class="product-card cat">
+          <span class="animal-tag">Cat</span>
+          <h3>Cat Toy #2</h3>
+          <p>Placeholder for another cat toy product. Replace once you know the real inventory.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+        <div class="product-card horse">
+          <span class="animal-tag">Horse</span>
+          <h3>Horse Food #1</h3>
+          <p>Placeholder for a horse feed product. Replace with the real feed name or brand later.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card horse">
+          <span class="animal-tag">Horse</span>
+          <h3>Horse Food #2</h3>
+          <p>Placeholder for another horse feed option. Add details after confirming inventory.</p>
+          <div class="product-type">Food</div>
+        </div>
+
+        <div class="product-card horse">
+          <span class="animal-tag">Horse</span>
+          <h3>Horse Toy #1</h3>
+          <p>Placeholder for a horse toy or enrichment product. Replace with real product info later.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+        <div class="product-card horse">
+          <span class="animal-tag">Horse</span>
+          <h3>Horse Toy #2</h3>
+          <p>Placeholder for another horse toy or enrichment item. Update once inventory is known.</p>
+          <div class="product-type">Toy</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-title">
+        <span>Need Something Specific?</span>
+        <h2>Call Ahead for Current Inventory</h2>
+        <p>Product availability may vary. Call or visit the store to ask about specific brands, sizes, flavors, and feed options.</p>
+        <br>
+        <a href="tel:6314862181" class="btn">Call (631) 486-2181</a>
       </div>
     </div>
   </section>
@@ -717,19 +531,10 @@
     <div class="container footer-grid">
       <div>
         <h3>Elwood Feed Pet Supplies</h3>
-        <p>
-          Local feed store and pet supply retailer serving East Northport,
-          Elwood, Huntington, Commack, and surrounding Long Island communities.
+        <p>Pet food, animal feed, toys, treats, and supplies in East Northport, NY.</p>
+        <p style="font-size:0.85rem; opacity:0.75; margin-top:18px;">
+          This website is a demonstration project created by Browne Digital Solutions and is not affiliated with or endorsed by Elwood Feed Pet Supplies.
         </p>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:6314862181">(631) 486-2181</a>
-        <a href="https://maps.google.com/?q=2036+Jericho+Turnpike+East+Northport+NY+11731" target="_blank">
-          2036 Jericho Turnpike<br>
-          East Northport, NY 11731
-        </a>
       </div>
 
       <div>
@@ -742,17 +547,33 @@
       </div>
 
       <div>
-        <h4>Social</h4>
-        <a href="https://www.facebook.com/p/Elwood-Feed-Pet-Supplies-61580834076799/" target="_blank">Facebook</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@elwoodfeedpetsupplies" target="_blank">TikTok</a>
+        <h4>Contact</h4>
+        <p>2036 Jericho Turnpike<br>East Northport, NY 11731</p>
+        <p><a href="tel:6314862181">(631) 486-2181</a></p>
+        <p>Sun: 9 AM - 5 PM</p>
+        <p>Mon-Fri: 10 AM - 7 PM</p>
+        <p>Sat: 9 AM - 7 PM</p>
       </div>
     </div>
-
-    <div class="container footer-bottom">
-      © 2026 Elwood Feed Pet Supplies. All rights reserved. Website demo created by Browne Digital Solutions.
-    </div>
   </footer>
+
+  <script>
+    function filterProducts(animal, button) {
+      const cards = document.querySelectorAll('.product-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      cards.forEach(card => {
+        if (animal === 'all' || card.classList.contains(animal)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
