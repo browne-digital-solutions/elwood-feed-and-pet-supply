@@ -499,3 +499,127 @@
         min-height: 330px;
       }
     }
+
+/* PRODUCTS PAGE */
+
+.products-hero {
+  min-height: 58vh;
+  background:
+    linear-gradient(90deg, rgba(30,50,28,0.92), rgba(30,50,28,0.48)),
+    url("https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+}
+
+.products-hero h1 {
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+}
+
+.product-filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.filter-btn {
+  border: none;
+  background: white;
+  color: #263b24;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid #e6dfcf;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #b9822b;
+  color: white;
+}
+
+.animal-section {
+  margin-bottom: 60px;
+}
+
+.animal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e6dfcf;
+}
+
+.animal-header h2 {
+  font-size: 2.2rem;
+  color: #263b24;
+}
+
+.animal-header p {
+  color: #5f6f58;
+  max-width: 520px;
+}
+
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.product-item {
+  background: white;
+  border-radius: 22px;
+  padding: 26px;
+  border: 1px solid #e6dfcf;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.1);
+}
+
+.product-tag {
+  display: inline-block;
+  background: #f7f5ef;
+  color: #b9822b;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.product-item h3 {
+  color: #263b24;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.product-item p {
+  color: #5f6f58;
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .product-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .animal-header {
+    display: block;
+  }
+
+  .animal-header h2 {
+    margin-bottom: 8px;
+  }
+}
