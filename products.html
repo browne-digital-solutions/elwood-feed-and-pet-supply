@@ -6,355 +6,370 @@
 
   <title>Products | Elwood Feed Pet Supplies</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #263b24;
-      background: #faf7ef;
-      line-height: 1.6;
-    }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263b24;
+    background: #faf7ef;
+    line-height: 1.6;
+  }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    .navbar {
-      background: #263b24;
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+  .navbar {
+    background: #263b24;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
 
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.45rem;
+    font-weight: 900;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #d9a441;
+  }
+
+  .hero {
+    min-height: 68vh;
+    padding: 125px 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+      linear-gradient(90deg, rgba(30,50,28,0.94), rgba(30,50,28,0.55)),
+      url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  }
+
+  .hero-content {
+    max-width: 760px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: #d9a441;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    line-height: 1.08;
+    margin-bottom: 22px;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin-bottom: 30px;
+    color: #f2efe6;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #b9822b;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 900;
+    border: 2px solid #b9822b;
+  }
+
+  .btn:hover {
+    background: #a36f20;
+    border-color: #a36f20;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-outline:hover {
+    background: white;
+    color: #263b24;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 45px;
+  }
+
+  .section-title span {
+    color: #b9822b;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-size: 0.85rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin: 10px 0 15px;
+    color: #263b24;
+  }
+
+  .section-title p {
+    color: #5a5a5a;
+    font-size: 1.05rem;
+  }
+
+  .info-strip {
+    background: #f3ead7;
+    padding: 38px 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .info-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .info-box h3 {
+    margin-bottom: 8px;
+    color: #263b24;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+  }
+
+  .filter-btn {
+    padding: 13px 24px;
+    border-radius: 999px;
+    border: 2px solid #b9822b;
+    background: white;
+    color: #263b24;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #b9822b;
+    color: white;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee3cf;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  }
+
+  .animal-tag {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #f3ead7;
+    color: #8a5a17;
+    font-weight: 900;
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+  }
+
+  .product-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    color: #263b24;
+  }
+
+  .product-card p {
+    color: #5b5b5b;
+    margin-bottom: 18px;
+  }
+
+  .product-type {
+    font-weight: 900;
+    color: #b9822b;
+    font-size: 0.95rem;
+  }
+
+  .alt-section {
+    background: #263b24;
+    color: white;
+  }
+
+  .alt-section .section-title h2,
+  .alt-section .section-title p {
+    color: white;
+  }
+
+  footer {
+    background: #172315;
+    color: white;
+    padding: 60px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  footer h3,
+  footer h4 {
+    color: white;
+    margin-bottom: 18px;
+    font-weight: 800;
+  }
+
+  footer p {
+    color: #d7d7d7;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+
+  footer a {
+    color: #d7d7d7;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+
+  footer a:hover {
+    color: #d9a441;
+  }
+
+  footer strong {
+    color: white;
+  }
+
+  @media (max-width: 1000px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 900px) {
     .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      color: white;
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: 0.5px;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 26px;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
     }
 
-    .nav-links a {
-      color: white;
-      font-weight: 700;
-      font-size: 0.95rem;
-      opacity: 0.92;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #d9a441;
+    .product-grid,
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .hero {
-      min-height: 68vh;
-      padding: 125px 0;
-      display: flex;
-      align-items: center;
-      color: white;
-      background:
-        linear-gradient(90deg, rgba(30,50,28,0.94), rgba(30,50,28,0.55)),
-        url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      min-height: auto;
+      padding: 100px 0;
     }
+  }
 
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: #d9a441;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
-      font-size: 0.9rem;
+  @media (max-width: 600px) {
+    .product-grid,
+    .info-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 1.08;
-      margin-bottom: 22px;
+      font-size: 2.45rem;
     }
 
     .hero p {
-      font-size: 1.15rem;
-      max-width: 680px;
-      margin-bottom: 30px;
-      color: #f2efe6;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #b9822b;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 900;
-      border: 2px solid #b9822b;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #a36f20;
-      border-color: #a36f20;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #263b24;
-      border-color: white;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 45px;
-    }
-
-    .section-title span {
-      color: #b9822b;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-size: 0.85rem;
-    }
-
-    .section-title h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin: 10px 0 15px;
-      color: #263b24;
-    }
-
-    .section-title p {
-      color: #5a5a5a;
-      font-size: 1.05rem;
-    }
-
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 45px;
+      font-size: 1rem;
     }
 
     .filter-btn {
-      padding: 13px 24px;
-      border-radius: 999px;
-      border: 2px solid #b9822b;
-      background: white;
-      color: #263b24;
-      font-weight: 900;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: #b9822b;
-      color: white;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      border: 1px solid #eee3cf;
-      transition: 0.2s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
-    }
-
-    .product-card .animal-tag {
-      display: inline-block;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: #f3ead7;
-      color: #8a5a17;
-      font-weight: 900;
-      font-size: 0.8rem;
-      margin-bottom: 18px;
-    }
-
-    .product-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-      color: #263b24;
-    }
-
-    .product-card p {
-      color: #5b5b5b;
-      margin-bottom: 18px;
-    }
-
-    .product-type {
-      font-weight: 900;
-      color: #b9822b;
-      font-size: 0.95rem;
-    }
-
-    .alt-section {
-      background: #263b24;
-      color: white;
-    }
-
-    .alt-section .section-title h2,
-    .alt-section .section-title p {
-      color: white;
-    }
-
-    .info-strip {
-      background: #f3ead7;
-      padding: 38px 0;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-
-    .info-box {
-      background: white;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    }
-
-    .info-box h3 {
-      margin-bottom: 8px;
-      color: #263b24;
+      width: 100%;
     }
 
     footer {
-      background: #172315;
-      color: white;
-      padding: 55px 0;
+      padding: 45px 0;
     }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1.5fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    footer h3,
-    footer h4 {
-      margin-bottom: 14px;
-      color: white;
-    }
-
-    footer p,
-    footer a {
-      color: #d7d7d7;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    footer a:hover {
-      color: #d9a441;
-    }
-
-    @media (max-width: 900px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .product-grid,
-      .info-grid,
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 100px 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .product-grid,
-      .info-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2.45rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .filter-btn {
-        width: 100%;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
