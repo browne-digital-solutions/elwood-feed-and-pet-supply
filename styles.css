@@ -623,3 +623,28 @@
     margin-bottom: 8px;
   }
 }
+
+/* ABOUT + DELIVERY HERO SPACING */
+
+.page-hero {
+  min-height: 92vh;
+  padding: 140px 0;
+  display: flex;
+  align-items: center;
+}
+
+.page-hero .hero-content {
+  max-width: 760px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  line-height: 1;
+}
+
+@media (max-width: 950px) {
+  .page-hero {
+    min-height: 75vh;
+    padding: 100px 0;
+  }
+}
